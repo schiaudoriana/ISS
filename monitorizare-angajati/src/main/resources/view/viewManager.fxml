@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="732.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerManager">
+   <children>
+      <TableView layoutX="22.0" layoutY="53.0" prefHeight="326.0" prefWidth="286.0">
+        <columns>
+          <TableColumn prefWidth="133.19998741149902" text="Employee" />
+          <TableColumn prefWidth="152.39999389648438" text="Login time" />
+        </columns>
+      </TableView>
+      <TableView layoutX="351.0" layoutY="53.0" prefHeight="205.0" prefWidth="362.0">
+        <columns>
+          <TableColumn prefWidth="143.60003662109375" text="Task description" />
+          <TableColumn prefWidth="113.79998779296875" text="Date" />
+            <TableColumn prefWidth="101.4000244140625" text="Status" />
+        </columns>
+      </TableView>
+      <Label layoutX="22.0" layoutY="25.0" text="Employees:" />
+      <Label layoutX="351.0" layoutY="25.0" text="Current employee's tasks:" />
+      <Button layoutX="457.0" layoutY="275.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" text="Add task" />
+      <Button layoutX="457.0" layoutY="315.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" text="Cancel task" />
+      <Button layoutX="457.0" layoutY="355.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" text="Logout" />
+   </children>
+</AnchorPane>
