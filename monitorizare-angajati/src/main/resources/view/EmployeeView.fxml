@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EmployeeController">
+   <children>
+      <Label layoutX="27.0" layoutY="27.0" text="Employee:" />
+      <TableView fx:id="tableViewTasks" layoutX="228.0" layoutY="65.0" prefHeight="229.0" prefWidth="346.0">
+        <columns>
+          <TableColumn fx:id="columnDescription" prefWidth="132.40003967285156" text="Task description" />
+          <TableColumn fx:id="columnDate" prefWidth="108.79998779296875" text="Date " />
+            <TableColumn fx:id="columnStatus" prefWidth="102.20001220703125" text="Status" />
+        </columns>
+      </TableView>
+      <Button fx:id="buttonPresent" layoutX="58.0" layoutY="133.0" mnemonicParsing="false" onAction="#handlePresent" prefHeight="40.0" prefWidth="108.0" text="Present" />
+      <Button layoutX="58.0" layoutY="189.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="108.0" text="Complete task" />
+      <Button fx:id="buttonLogout" layoutX="58.0" layoutY="245.0" mnemonicParsing="false" onAction="#handleLogout" prefHeight="40.0" prefWidth="108.0" text="Logout" />
+      <TextField fx:id="textHour" layoutX="56.0" layoutY="77.0" prefHeight="26.0" prefWidth="108.0" />
+      <Label layoutX="12.0" layoutY="81.0" text="Hour:" />
+   </children>
+</AnchorPane>

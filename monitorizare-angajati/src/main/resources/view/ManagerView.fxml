@@ -3,12 +3,12 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="732.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerManager">
+<AnchorPane prefHeight="400.0" prefWidth="732.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ManagerController">
    <children>
-      <TableView layoutX="22.0" layoutY="53.0" prefHeight="326.0" prefWidth="286.0">
+      <TableView fx:id="tableViewEmployees" layoutX="22.0" layoutY="53.0" prefHeight="326.0" prefWidth="286.0">
         <columns>
-          <TableColumn prefWidth="133.19998741149902" text="Employee" />
-          <TableColumn prefWidth="152.39999389648438" text="Login time" />
+          <TableColumn fx:id="columnEmployee" prefWidth="133.19998741149902" text="Employee" />
+          <TableColumn fx:id="columnTime" prefWidth="152.39999389648438" text="Login time" />
         </columns>
       </TableView>
       <TableView layoutX="351.0" layoutY="53.0" prefHeight="205.0" prefWidth="362.0">
