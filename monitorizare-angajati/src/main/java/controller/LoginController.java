@@ -51,7 +51,7 @@ public class LoginController {
             controller.setService(service,us);
 
             Stage primaryStage=new Stage();
-            primaryStage.setTitle("Employee monitoring");
+            primaryStage.setTitle("Employee window");
             primaryStage.setScene(new Scene(root, 660, 400));
             primaryStage.show();
         }
@@ -69,7 +69,7 @@ public class LoginController {
             managerController.setService(service,us);
 
             Stage primaryStage=new Stage();
-            primaryStage.setTitle("Employee monitoring");
+            primaryStage.setTitle("Manager window");
             primaryStage.setScene(new Scene(root, 730, 400));
             primaryStage.show();
         }

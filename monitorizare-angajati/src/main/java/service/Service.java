@@ -49,6 +49,28 @@ public class Service implements Observable {
                 .collect(Collectors.toList());
     }
 
+    public boolean completeTask(Task task){
+        boolean updated=taskRepo.complete(task);
+        if (updated)
+            notifyObservers(new ObsEvent() {
+            });
+        return updated;
+    }
+
+    public void addTask(Task t){
+        taskRepo.addNewTask(t);
+        notifyObservers(new ObsEvent() {
+        });
+    }
+
+    public boolean cancelTask( Task task ) {
+        boolean cancelled=taskRepo.cancelTask(task);
+        if (cancelled)
+            notifyObservers(new ObsEvent() {
+            });
+        return cancelled;
+    }
+
     private List<Observer<ObsEvent>>observers=new ArrayList<>();
 
     @Override
@@ -60,4 +82,5 @@ public class Service implements Observable {
     public void notifyObservers( ObsEvent event ) {
         observers.forEach(x->x.update(event));
     }
+
 }

@@ -7,21 +7,21 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
-import javafx.scene.control.Alert;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import service.Service;
+import service.utils.ObsEvent;
+import service.utils.Observer;
 
 import java.util.List;
 
-public class EmployeeController {
+public class EmployeeController implements Observer<ObsEvent> {
     public TextField textHour;
     public TableView<Task> tableViewTasks;
     public TableColumn<Task,String> columnDescription;
     public TableColumn<Task,String> columnDate;
     public TableColumn<Task, String> columnStatus;
+    public Label labelCurrent;
     private Service service;
     private User current;
 
@@ -46,6 +46,8 @@ public class EmployeeController {
     public void setService( Service service,User user ) {
         this.service = service;
         this.current=user;
+        this.service.add(this);
+        this.labelCurrent.setText(current.getName());
     }
 
     public void handlePresent( ActionEvent actionEvent ) {
@@ -69,4 +71,20 @@ public class EmployeeController {
         ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
     }
 
+    public void handleCompleteTask( ActionEvent actionEvent ) {
+        if(tableViewTasks.getSelectionModel().getSelectedItem()==null)
+            MessageBox.showMessage(null, Alert.AlertType.ERROR,"Error","You must select a task!");
+        else{
+            Task t=tableViewTasks.getSelectionModel().getSelectedItem();
+            if(!service.completeTask(t))
+                MessageBox.showMessage(null, Alert.AlertType.ERROR,"Error","Task is already completed!");
+            else
+                MessageBox.showMessage(null, Alert.AlertType.INFORMATION,"Information","Task completed successfully!");
+        }
+    }
+
+    @Override
+    public void update( ObsEvent obsEvent ) {
+        setTasksList();
+    }
 }

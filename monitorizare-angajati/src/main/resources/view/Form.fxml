@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Form">
+   <children>
+      <Label layoutX="224.0" layoutY="129.0" prefHeight="20.0" prefWidth="164.0" text="New task description:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="textArea" layoutX="153.0" layoutY="160.0" prefHeight="80.0" prefWidth="277.0" />
+      <Button layoutX="242.0" layoutY="269.0" mnemonicParsing="false" onAction="#handleAddForm" prefHeight="32.0" prefWidth="98.0" text="Add Task" />
+   </children>
+</AnchorPane>
